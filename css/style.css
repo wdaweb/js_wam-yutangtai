@@ -321,12 +321,19 @@ body {
   font-size: 20px;
 
   background: linear-gradient(rgb(141 15 15), rgb(180 49 49), rgb(167 31 31));
-  background: #7f0020;
+  background: #9e193a;
   box-shadow: 10px -3px 7px -5px #fcf6f6 inset, 0 9px 3px -3px #bcb3b3 inset, 0 -12px 3px -6px #d4cbcb inset, 1px 0 2px 9px #f8f8f8 inset;
 
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  cursor: pointer;
+}
+
+#btn:active{
+  width: 130px;
+  height: 60px;
+  font-size: 1rem;
+
+  background: #7a102a;
 }
