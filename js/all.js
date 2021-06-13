@@ -18,8 +18,7 @@ function timeCount() {
     text_countdown.innerHTML = countdown
 
     if (countdown < 0) {
-      speedCount()
-      alert('Game over!!! Your score is ' + score + ',\r ● Speed: ' + speed + 'char/s,\r ● Accuracy: ' + correctPercent)
+      alert('Game over!!! Your score is ' + score)
       text_score.innerHTML = '0'
       keyPress.innerHTML = ''
       randomWord.innerHTML = ''
@@ -66,25 +65,12 @@ function createSpan() {
 createSpan()
 
 // 判斷鍵入的字母---------------->
-let speed
 let userType
 let userTypeNum = 0 //按下按鍵的次數
-let correctPercent
 let correctNum = 0
 let correctTotal = 0
 
 let score = 0
-
-// function correct(){
-//   for(let i = 0; i < newSpan.length; i++){
-//     if (newSpan[i].innerHTML === userType) {
-//       if ((newSpan[i].classList.contains('bg') === false && newSpan[i - 1] === undefined) || newSpan[i - 1].classList.contains('bg') !== false) {
-//         newSpan[i].classList.add('bg')
-        
-//       }
-//     }    
-//   }
-// }
 
 function typing(event) {
   let checker = 0 //檢查是否每個字母已具有背景色
@@ -106,13 +92,6 @@ function typing(event) {
         break
       }
     }
-    //計算正確率
-    // console.log(i,newSpan[i].classList.contains('bg'))
-    // if(newSpan[i].classList.contains('bg')){
-      
-    //   correctNum = i+2
-    //   // console.log(correctNum)
-    // }
   }
   
   //檢查並計分
@@ -125,12 +104,7 @@ function typing(event) {
       checker++
       
       console.log('checker-----------' + checker)
-    }    
-    
-    // if (newSpan[j].className === 'span bg') {
-      //   checker++
-      //   console.log('checker-----------' + checker)
-      // }
+    }
       if (checker === newSpan.length) {
         document.querySelector('#randomWord').classList.remove('span')
         randomWord.classList.add('animate__animated')
@@ -159,18 +133,6 @@ function correct(){
     correctTotal += (correctNum - (correctNum-1))
     console.log('總正確數:' + correctTotal)
   }    
-}
-
-
-//計算打字速度及準確率-------------->
-
-function speedCount() {
-
-  speed = userTypeNum / 60
-  
-  console.log('*correctTotal:' + correctTotal)
-  console.log('**userTypeNum:' + userTypeNum)
-  correctPercent = correctTotal / userTypeNum * 100
 }
 
 //點擊按鈕監聽--------------->
